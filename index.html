@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Abhinav Vats Edition — UI/UX Designer + Frontend Developer</title>
+  <meta name="description" content="Editorial portfolio of Abhinav Vats: UI/UX Designer & Frontend Developer. Featuring Yoruu, Planto, and Classy Fashion case studies.">
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/page-turn.css">
+  <link rel="stylesheet" href="css/newspaper.css">
+  <link rel="stylesheet" href="css/case-study.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 font-family=%22serif%22 font-weight=%22bold%22>AV</text></svg>">
+  
+  <!-- Motion (Framer) for vanilla JS animations -->
+  <script src="https://cdn.jsdelivr.net/npm/motion@11.11.13/dist/motion.js"></script>
+</head>
+<body>
+
+  <!-- ===================================================================
+       EDITION LOADER — 0.3s "Opening a Fresh Newspaper"
+       =================================================================== -->
+  <div class="edition-loader" id="editionLoader">
+    <div class="loader-rule"></div>
+    <div class="loader-masthead" style="font-family:'Playfair Display', serif;">ABHINAV VATS</div>
+    <div class="loader-subtitle">UI/UX Designer + Frontend Developer · Issue 01 · 2026</div>
+    <div class="loader-rule"></div>
+  </div>
+
+  <!-- ===================================================================
+       THE PUBLICATION
+       =================================================================== -->
+  <div class="newspaper-publication page-turn-perspective">
+
+    <!-- =================================================================
+         MASTHEAD NAVIGATION (Persistent)
+         ================================================================= -->
+    <nav class="masthead-nav-top">
+      <button class="nav-link active" data-navigate="front-page">HOME</button>
+      <button class="nav-link" onclick="navigateTo('front-page'); setTimeout(() => document.getElementById('feature-stories').scrollIntoView({behavior: 'smooth'}), 400)">PROJECTS</button>
+      <button class="nav-link" data-navigate="about">ABOUT</button>
+      <button class="nav-link" data-navigate="resume">RESUME</button>
+    </nav>
+    <div class="masthead-meta-bar">
+      <div class="meta-page-num">1</div>
+      <div class="meta-links">
+        <a href="https://www.linkedin.com/in/abhinav-vats25" target="_blank" rel="noopener noreferrer"><span class="meta-icon">in</span> LINKEDIN</a>
+        <a href="https://github.com/Avisav24" target="_blank" rel="noopener noreferrer"><svg class="meta-icon" style="width:13px;height:13px;fill:#000;" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> GITHUB</a>
+        <button data-navigate="resume"><svg class="meta-icon" style="width:14px;height:14px;" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#2A303C"/><rect x="5" y="6" width="14" height="2" fill="#FFFFFF"/><rect x="5" y="11" width="14" height="2" fill="#FFFFFF"/><rect x="5" y="16" width="9" height="2" fill="#FFFFFF"/></svg> RESUME</button>
+        <button data-copy-email><span class="meta-icon" style="color:#333;">✉</span> ABHINAVVATS.DEV@GMAIL.COM</button>
+      </div>
+    </div>
+
+
+    <!-- =================================================================
+         PAGE 01: FRONT PAGE — BROADSHEET LAYOUT
+         ================================================================= -->
+    <article class="newspaper-page active" id="page-front-page">
+
+      <!-- Giant Hero Masthead -->
+      <section class="hero-masthead-block">
+        <div class="hero-portrait-left">
+          <img src="assets/images/main-portrait.png" alt="Abhinav Vats" />
+        </div>
+        <h1 class="hero-masthead-name">ABHINAV VATS</h1>
+        
+      </section>
+
+      <!-- Colored Strip -->
+      <div class="hero-strip">
+        <div class="strip-box strip-green">
+          <p>BUILT 50+ REUSABLE COMPONENTS.<br>ENGINEERED DESIGN TOKENS, AN<br>ABSOLUTE GENIUS <span class="strip-num">3</span></p>
+        </div>
+        <div class="strip-box strip-beige">
+          <p>WORKING WITH ABHINAV WAS ON<br>MY BUCKET-LIST FOR A LONG TIME..<br>GLAD IT WAS POSSIBLE <span class="strip-num">2</span></p>
+        </div>
+        <div class="strip-box strip-photo">
+          <img src="assets/images/visited-chennai-1.jpeg" alt="Chennai" />
+        </div>
+        <div class="strip-box strip-blue">
+          <p>"WE DON't FULLY UNDERSTAND HIS<br>PROCESS. BUT IT WORKS." -<br>LOOPING LOONS TEAM <span class="strip-num">2</span></p>
+        </div>
+      </div>
+
+      <!-- ========== BROADSHEET GRID: Main + Sidebar ========== -->
+      <div class="front-page-grid">
+
+        <!-- ===== MAIN COLUMN ===== -->
+        <div class="front-page-main">
+
+          <!-- Editorial Lead -->
+          <section class="editorial-lead">
+            <h2 class="editorial-lead-headline">From Wireframes to Production, UI/UX Workflow Delivers Results</h2>
+            <p class="editorial-lead-deck">Designed by Abhinav Vats, the UI/UX frontend experience reduced friction and improved conversions, driving 50+ successful production components in its first quarter.</p>
+          </section>
+
+          <!-- Feature Stories Section -->
+          <div class="stories-section-header" id="feature-stories">
+            <h3 class="stories-section-title">Feature Stories</h3>
+            <span class="stories-section-count">3 PROJECTS · LIVE PROTOTYPES · 2026</span>
+          </div>
+
+          <!-- LEAD STORY: Yoruu -->
+          <div class="lead-story">
+            <a href="https://www.figma.com/proto/7eHVYRCt2PhAcdjhQdqzAU/Yoruu?node-id=290-1527&t=XqqAJlY7uCe0mzHj-1" target="_blank" rel="noopener noreferrer" class="lead-story-visual">
+              <img src="assets/images/yoruu-thumbnail.png" alt="Yoruu AI Wingman App" />
+              <div class="hover-overlay">
+                <span class="hover-overlay-label">View Prototype ↗</span>
+              </div>
+            </a>
+            <div class="story-meta-row" style="margin-top:12px;">
+              <span class="category-badge">AI DATING</span>
+              <span class="story-number">PROJECT 01 / 03</span>
+            </div>
+            <h3 class="story-title" style="margin-top:4px;">
+              <a href="#" onclick="event.preventDefault(); navigateTo('yoruu')">Yoruu: AI Chat Companion & Matchmaking App</a>
+            </h3>
+            <p class="story-deck">An AI-based chat application designed to match users for dates through intelligent conversation, smart recommendations, and interactive AI companions.</p>
+            <div class="prototype-link-box" style="margin-top:8px;">
+              <span class="prototype-link-label">Figma Prototype</span>
+              <a href="https://www.figma.com/proto/7eHVYRCt2PhAcdjhQdqzAU/Yoruu?node-id=290-1527" target="_blank" rel="noopener noreferrer" class="prototype-link-url">figma.com/proto/7eHVYRCt2PhAcdjhQdqzAU/Yoruu</a>
+            </div>
+            <button class="story-cta" data-navigate="yoruu">
+              Read Full Story <span class="cta-arrow">→</span>
+            </button>
+          </div>
+
+          <!-- SECONDARY STORIES: Planto & Classy Fashion -->
+          <div class="secondary-stories">
+            <!-- Planto -->
+            <div class="secondary-story">
+              <a href="https://www.figma.com/proto/ExZbWixckrYjeWUxkc6ZrY/Plants-Landing-page?node-id=0-1" target="_blank" rel="noopener noreferrer" class="secondary-story-visual">
+                <img src="assets/images/planto-thumbnail.png" alt="Planto Landing Page" />
+                <div class="hover-overlay">
+                  <span class="hover-overlay-label">View Prototype ↗</span>
+                </div>
+              </a>
+              <div class="story-meta-row" style="margin-top:8px;">
+                <span class="category-badge">ECO-SOLUTIONS</span>
+                <span class="story-number">PROJECT 02 / 03</span>
+              </div>
+              <h3 class="story-title" style="margin-top:4px;"><a href="#" onclick="event.preventDefault(); navigateTo('planto')">Planto: Corporate Eco-Solutions</a></h3>
+              <p class="story-deck">An e-commerce landing page connecting corporate clients with indoor plant setups.</p>
+              <button class="story-cta" data-navigate="planto">Read Full Story <span class="cta-arrow">→</span></button>
+            </div>
+
+            <!-- Classy Fashion -->
+            <div class="secondary-story">
+              <a href="https://www.figma.com/proto/zkop4UZCnftJHYydb8F4qU/Classy-Fashion?node-id=1-3321" target="_blank" rel="noopener noreferrer" class="secondary-story-visual">
+                <img src="assets/images/classy-fashion-thumbnail.jpg" alt="Classy Fashion Storefront" />
+                <div class="hover-overlay">
+                  <span class="hover-overlay-label">View Prototype ↗</span>
+                </div>
+              </a>
+              <div class="story-meta-row" style="margin-top:8px;">
+                <span class="category-badge">LUXURY E-COMMERCE</span>
+                <span class="story-number">PROJECT 03 / 03</span>
+              </div>
+              <h3 class="story-title" style="margin-top:4px;"><a href="#" onclick="event.preventDefault(); navigateTo('fashion')">Classy Fashion</a></h3>
+              <p class="story-deck">A modern apparel e-commerce experience optimized for seamless product discovery.</p>
+              <button class="story-cta" data-navigate="fashion">Read Full Story <span class="cta-arrow">→</span></button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ===== SIDEBAR COLUMN ===== -->
+        <aside class="front-page-sidebar">
+
+          <!-- Travel Photo Essay Sidebar Style -->
+          <div class="travel-essay-sidebar">
+            <h3 class="travel-essay-title">Travels to new places, mostly for the stories and the photos.</h3>
+            <p class="travel-essay-text"><strong>About : </strong>Finds interest in observing people, places, and small details, something that often carries into how he approaches design. <strong>P2</strong></p>
+            <div class="travel-photos-grid-sidebar">
+              <div class="travel-photo-sb"><img src="assets/images/visited-chennai-1.jpeg" alt="Chennai 1" loading="lazy" /></div>
+              <div class="travel-photo-sb"><img src="assets/images/visited-chennai-2.jpeg" alt="Chennai 2" loading="lazy" /></div>
+              <div class="travel-photo-sb"><img src="assets/images/visited-chennai-3.jpeg" alt="Chennai 3" loading="lazy" /></div>
+              <div class="travel-photo-sb"><img src="assets/images/visited-chennai-4.jpeg" alt="Chennai 4" loading="lazy" /></div>
+            </div>
+          </div>
+
+          <!-- Map Clipping -->
+          <div class="sidebar-module" style="padding-top:16px;">
+            <h4 class="sidebar-module-title">Based In</h4>
+            <div class="map-clipping">
+              <img src="assets/images/new-delhi-map.jpg" alt="New Delhi, India" />
+              <span class="map-annotation"><span class="map-annotation-arrow">↙</span> BASED HERE</span>
+            </div>
+            <p class="map-label">New Delhi, India</p>
+          </div>
+
+          <!-- Career Timeline -->
+          <div class="sidebar-module">
+            <h4 class="sidebar-module-title">Career Timeline</h4>
+            <div class="sidebar-timeline">
+              <div class="timeline-entry">
+                <span class="timeline-dot active"></span>
+                <div>
+                  <span class="timeline-label">UI/UX Frontend Dev — Looping Loons</span>
+                  <span class="timeline-sub">Nov 2025 – Apr 2026 · Paid</span>
+                </div>
+              </div>
+              <div class="timeline-entry">
+                <span class="timeline-dot"></span>
+                <div>
+                  <span class="timeline-label">B.Tech CSE — SRM Institute</span>
+                  <span class="timeline-sub">Currently pursuing</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Open to Work Promo -->
+          <div class="sidebar-module" style="border-bottom:none; padding-top:16px;">
+            <div class="open-to-work-promo">
+              <div class="otw-box">
+                <h4 class="otw-header">Open to work</h4>
+                <div class="otw-content">
+                  <p>In the latest updates, Abhinav is actively pursuing new opportunities to demonstrate his remarkable skills. Interested parties can download his resume.</p>
+                  <a href="#" onclick="event.preventDefault(); navigateTo('resume')" class="otw-download-btn"><span class="otw-square"></span> Download Resume &gt;&gt;</a>
+                </div>
+              </div>
+              <div class="otw-article">
+                <h4 class="otw-article-title">Abhinav could replace us, Top discussion among AI Tools</h4>
+                <p>AI reportedly concerned about his usage patterns as he regularly uses AI for research, ideation, prototyping and building; focusing on speed, execution and experimentation.</p>
+              </div>
+            </div>
+          </div>
+
+        </aside>
+      </div>
+      <!-- ========== END BROADSHEET GRID ========== -->
+
+      <!-- Footer -->
+      <footer class="newspaper-footer" style="margin-top:0; padding:16px 0;">
+        <span class="footer-copyright">© 2026 The Abhinav Vats Edition · Typeset in Playfair Display & Oswald · Page 01</span>
+        <button class="footer-page-turn" data-navigate="about">Profile Article →</button>
+      </footer>
+    </article>
+
+
+    <!-- =================================================================
+         PAGE 02: YORUU CASE STUDY
+         ================================================================= -->
+    <article class="newspaper-page" id="page-yoruu">
+      <div class="case-study-article">
+        <button class="cs-back-link" data-navigate="front-page">← Back to Front Page</button>
+
+        <div class="cs-cover">
+          <div class="cs-cover-meta">
+            <span class="category-badge">AI DATING & MATCHMAKING</span>
+            <span class="cs-issue-label">PROJECT 01 / 03 · FEATURE STORY</span>
+          </div>
+          <h2 class="cs-cover-title">Yoruu</h2>
+          <p class="cs-cover-deck">An AI-based chat companion designed to match users for dates through intelligent conversation, smart recommendations, and interactive AI companions.</p>
+          <div class="cs-cover-visual">
+            <img src="assets/images/yoruu-thumbnail.png" alt="Yoruu UI" loading="lazy" />
+          </div>
+          <div class="cs-metadata-grid">
+            <div class="cs-meta-item"><span class="cs-meta-label">Role</span><span class="cs-meta-value">UI/UX Designer</span></div>
+            <div class="cs-meta-item"><span class="cs-meta-label">Timeline</span><span class="cs-meta-value">2026</span></div>
+            <div class="cs-meta-item"><span class="cs-meta-label">Tools</span><span class="cs-meta-value">Figma, Auto-Layout</span></div>
+            <div class="cs-meta-item"><span class="cs-meta-label">Platform</span><span class="cs-meta-value">Mobile (iOS/Android)</span></div>
+          </div>
+        </div>
+
+        <!-- The Story -->
+        <div class="cs-section">
+          <div class="cs-section-header"><h3 class="cs-section-title">The Story</h3><span class="cs-section-page">P.02</span></div>
+          <div class="cs-two-column">
+            <p>Yoruu is a mobile dating application built around the concept of AI-driven matchmaking. Instead of relying on traditional swiping mechanics, Yoruu introduces an AI chat companion called "Your AI Wingman" that helps users find compatible matches through conversation-based interaction.</p>
+            <p>The design challenge centered on creating a dark-mode interface that felt approachable and playful while maintaining the sophistication expected from a dating platform. The purple and orange accent palette was chosen to convey warmth and energy within a dark environment.</p>
+          </div>
+        </div>
+
+        <!-- The Problem -->
+        <div class="cs-section">
+          <div class="cs-section-header"><h3 class="cs-section-title">The Problem</h3><span class="cs-section-page">P.03</span></div>
+          <div class="cs-pullquote">Existing dating apps reduce human connection to a swipe. How do we create a platform where conversation comes first?</div>
+          <p class="cs-body-text">Most dating applications prioritize visual first impressions over meaningful interaction. Users report feeling fatigued by repetitive swiping mechanics and superficial matching algorithms. The challenge was designing an experience where AI-facilitated conversation becomes the primary discovery mechanism.</p>
+        </div>
+
+        <!-- The Approach -->
+        <div class="cs-section">
+          <div class="cs-section-header"><h3 class="cs-section-title">The Approach</h3><span class="cs-section-page">P.04</span></div>
+          <p class="cs-body-text"><strong>1. Chat-first architecture:</strong> The main interaction surface is a conversational AI interface, not a card stack. Users engage with Yoruu's AI wingman before being introduced to potential matches.</p>
+          <p class="cs-body-text"><strong>2. Dark-mode as default:</strong> Given the intimate nature of dating apps and typical evening usage patterns, the dark theme was chosen as the primary visual mode with carefully selected accent colors for readability.</p>
+          <p class="cs-body-text"><strong>3. Playful but sophisticated components:</strong> Custom iconography, rounded chat bubbles, and the signature paw-print interaction button maintain a friendly tone without feeling juvenile.</p>
+        </div>
+
+        <!-- User Flow -->
+        <div class="cs-section">
+          <div class="cs-section-header"><h3 class="cs-section-title">User Flow</h3><span class="cs-section-page">P.05</span></div>
+          <div class="cs-flow-diagram">
+            <div class="cs-flow-step"><div class="cs-flow-step-number">1</div><span class="cs-flow-step-label">Onboarding</span></div>
+            <span class="cs-flow-arrow">→</span>
+            <div class="cs-flow-step"><div class="cs-flow-step-number">2</div><span class="cs-flow-step-label">AI Chat</span></div>
+            <span class="cs-flow-arrow">→</span>
+            <div class="cs-flow-step"><div class="cs-flow-step-number">3</div><span class="cs-flow-step-label">Match Suggestion</span></div>
+            <span class="cs-flow-arrow">→</span>
+            <div class="cs-flow-step"><div class="cs-flow-step-number">4</div><span class="cs-flow-step-label">Chat with Match</span></div>
+            <span class="cs-flow-arrow">→</span>
+            <div class="cs-flow-step"><div class="cs-flow-step-number">5</div><span class="cs-flow-step-label">Date Planning</span></div>
+          </div>
+        </div>
+
+        <!-- Final Design -->
+        <div class="cs-section">
+          <div class="cs-section-header"><h3 class="cs-section-title">Final Design</h3><span class="cs-section-page">P.08</span></div>
+          <div class="cs-figure">
+            <img src="assets/images/yoruu-thumbnail.png" alt="Yoruu Final Designs" loading="lazy" />
+            <p class="cs-figure-caption">Fig. 1 — The Yoruu interface featuring dark-mode chat screens, AI wingman interaction, match profiles, and the signature paw-print action button.</p>
+          </div>
+          <div class="cs-prototype-embed">
+            <div class="cs-prototype-header">
+              <span class="cs-prototype-title">❖ Live Figma Prototype</span>
+              <a href="https://www.figma.com/proto/7eHVYRCt2PhAcdjhQdqzAU/Yoruu?node-id=290-1527" target="_blank" rel="noopener noreferrer" class="cs-prototype-link">Open in Figma ↗</a>
+            </div>
+            <iframe class="cs-prototype-iframe" src="https://embed.figma.com/proto/7eHVYRCt2PhAcdjhQdqzAU/Yoruu?node-id=290-1527&embed-host=share" allowfullscreen loading="lazy"></iframe>
+          </div>
+        </div>
+
+        <!-- The Result -->
+        <div class="cs-section">
+          <div class="cs-section-header"><h3 class="cs-section-title">The Result</h3><span class="cs-section-page">P.10</span></div>
+          <div class="cs-result-grid">
+            <div class="cs-result-card"><h4 class="cs-result-card-title">What Was Designed</h4><p>A complete mobile dating application with onboarding, AI chat interface, match discovery, direct messaging, and profile management screens.</p></div>
+            <div class="cs-result-card"><h4 class="cs-result-card-title">Key Design Decisions</h4><p>Dark-mode first, chat-centric architecture, playful iconography balanced with functional clarity, and conversation-driven matching over swipe mechanics.</p></div>
+            <div class="cs-result-card"><h4 class="cs-result-card-title">What I Learned</h4><p>Designing for intimate interactions requires careful tonal balance. The challenge of making AI feel approachable without being uncanny shaped the entire visual language.</p></div>
+            <div class="cs-result-card"><h4 class="cs-result-card-title">What I Would Improve</h4><p>Add more accessibility considerations for the dark theme, explore light mode options, and refine the AI conversation patterns with more nuanced interaction states.</p></div>
+          </div>
+        </div>
+
+        <div class="cs-next-story">
+          <button class="cs-next-story-link" data-navigate="planto">Next Story: Planto →</button>
+        </div>
+      </div>
+      <footer class="newspaper-footer"><span class="footer-copyright">© 2026 The Abhinav Vats Edition · Page 02</span><button class="footer-page-turn" data-navigate="front-page">← Front Page</button></footer>
+    </article>
+
+
+    <!-- =================================================================
+         PAGE 03: PLANTO CASE STUDY
+         ================================================================= -->
+    <article class="newspaper-page" id="page-planto">
+      <div class="case-study-article">
+        <button class="cs-back-link" data-navigate="front-page">← Back to Front Page</button>
+
+        <div class="cs-cover">
+          <div class="cs-cover-meta">
+            <span class="category-badge">B2B PLANT & ECO-SOLUTIONS</span>
+            <span class="cs-issue-label">PROJECT 02 / 03 · FEATURE STORY</span>
+          </div>
+          <h2 class="cs-cover-title">Planto</h2>
+          <p class="cs-cover-deck">An e-commerce landing page connecting corporate clients and office spaces with oxygen-rich indoor and outdoor plant setups directly from local suppliers.</p>
+          <div class="cs-cover-visual">
+            <img src="assets/images/planto-thumbnail.png" alt="Planto UI" loading="lazy" />
+          </div>
+          <div class="cs-metadata-grid">
+            <div class="cs-meta-item"><span class="cs-meta-label">Role</span><span class="cs-meta-value">UI/UX Designer</span></div>
+            <div class="cs-meta-item"><span class="cs-meta-label">Timeline</span><span class="cs-meta-value">2026</span></div>
+            <div class="cs-meta-item"><span class="cs-meta-label">Tools</span><span class="cs-meta-value">Figma</span></div>
+            <div class="cs-meta-item"><span class="cs-meta-label">Platform</span><span class="cs-meta-value">Desktop Web</span></div>
+          </div>
+        </div>
+
+        <div class="cs-section">
+          <div class="cs-section-header"><h3 class="cs-section-title">The Story</h3><span class="cs-section-page">P.02</span></div>
+          <div class="cs-two-column">
+            <p>Planto addresses the growing corporate demand for green office environments. The landing page is designed to immediately communicate the value of indoor plants for workplace wellness while providing a clear path to product exploration and supplier connection.</p>
+            <p>The design language draws from nature — deep greens, organic shapes, and generous whitespace that mirrors the calm, restorative quality of the plants being sold. The layout prioritizes trust signals and visual impact over aggressive conversion tactics.</p>
+          </div>
+        </div>
+
+        <div class="cs-section">
+          <div class="cs-section-header"><h3 class="cs-section-title">The Problem</h3><span class="cs-section-page">P.03</span></div>
+          <div class="cs-pullquote">Corporate buyers need to see plants in context — in offices, on desks, in lobbies — not in generic nursery catalog shots.</div>
+          <p class="cs-body-text">The primary challenge was designing a B2B landing page that felt premium enough for corporate procurement while remaining accessible and informative for facility managers making purchasing decisions.</p>
+        </div>
+
+        <div class="cs-section">
+          <div class="cs-section-header"><h3 class="cs-section-title">The Approach</h3><span class="cs-section-page">P.04</span></div>
+          <p class="cs-body-text"><strong>1. Nature-first visual hierarchy:</strong> Large botanical photography dominates the above-the-fold experience, establishing the product category immediately without relying on text explanations.</p>
+          <p class="cs-body-text"><strong>2. Trust through simplicity:</strong> Clean statistics (250+ types, 1000+ happy customers) are presented without embellishment, using design restraint to lend credibility.</p>
+          <p class="cs-body-text"><strong>3. Testimonial integration:</strong> Customer reviews appear contextually alongside product imagery rather than in an isolated testimonials section.</p>
+        </div>
+
+        <div class="cs-section">
+          <div class="cs-section-header"><h3 class="cs-section-title">User Flow</h3><span class="cs-section-page">P.05</span></div>
+          <div class="cs-flow-diagram">
+            <div class="cs-flow-step"><div class="cs-flow-step-number">1</div><span class="cs-flow-step-label">Landing Hero</span></div>
+            <span class="cs-flow-arrow">→</span>
+            <div class="cs-flow-step"><div class="cs-flow-step-number">2</div><span class="cs-flow-step-label">Plant Categories</span></div>
+            <span class="cs-flow-arrow">→</span>
+            <div class="cs-flow-step"><div class="cs-flow-step-number">3</div><span class="cs-flow-step-label">Product Detail</span></div>
+            <span class="cs-flow-arrow">→</span>
+            <div class="cs-flow-step"><div class="cs-flow-step-number">4</div><span class="cs-flow-step-label">Cart & Checkout</span></div>
+          </div>
+        </div>
+
+        <div class="cs-section">
+          <div class="cs-section-header"><h3 class="cs-section-title">Final Design</h3><span class="cs-section-page">P.08</span></div>
+          <div class="cs-figure">
+            <img src="assets/images/planto-thumbnail.png" alt="Planto Final Design" loading="lazy" />
+            <p class="cs-figure-caption">Fig. 1 — The Planto landing page featuring the "Breath Natureal" hero with botanical photography, trust metrics, and product exploration flow.</p>
+          </div>
+          <div class="cs-prototype-embed">
+            <div class="cs-prototype-header">
+              <span class="cs-prototype-title">❖ Live Figma Prototype</span>
+              <a href="https://www.figma.com/proto/ExZbWixckrYjeWUxkc6ZrY/Plants-Landing-page?node-id=0-1" target="_blank" rel="noopener noreferrer" class="cs-prototype-link">Open in Figma ↗</a>
+            </div>
+            <iframe class="cs-prototype-iframe" src="https://embed.figma.com/proto/ExZbWixckrYjeWUxkc6ZrY/Plants-Landing-page?node-id=0-1&embed-host=share" allowfullscreen loading="lazy"></iframe>
+          </div>
+        </div>
+
+        <div class="cs-section">
+          <div class="cs-section-header"><h3 class="cs-section-title">The Result</h3><span class="cs-section-page">P.10</span></div>
+          <div class="cs-result-grid">
+            <div class="cs-result-card"><h4 class="cs-result-card-title">What Was Designed</h4><p>A complete B2B e-commerce landing page with hero section, product categories, customer testimonials, and a clear CTA flow for corporate plant procurement.</p></div>
+            <div class="cs-result-card"><h4 class="cs-result-card-title">Key Design Decisions</h4><p>Nature-first visual hierarchy, dark green palette to establish brand authority, and clean statistical trust signals without embellishment.</p></div>
+            <div class="cs-result-card"><h4 class="cs-result-card-title">What I Learned</h4><p>B2B landing pages benefit from the same visual polish as consumer products. Corporate buyers respond to beautiful, well-organized design.</p></div>
+            <div class="cs-result-card"><h4 class="cs-result-card-title">What I Would Improve</h4><p>Explore a multi-page flow with dedicated product detail pages and a more robust filtering system for different plant categories and office sizes.</p></div>
+          </div>
+        </div>
+
+        <div class="cs-next-story"><button class="cs-next-story-link" data-navigate="fashion">Next Story: Classy Fashion →</button></div>
+      </div>
+      <footer class="newspaper-footer"><span class="footer-copyright">© 2026 The Abhinav Vats Edition · Page 03</span><button class="footer-page-turn" data-navigate="front-page">← Front Page</button></footer>
+    </article>
+
+
+    <!-- =================================================================
+         PAGE 04: CLASSY FASHION CASE STUDY
+         ================================================================= -->
+    <article class="newspaper-page" id="page-fashion">
+      <div class="case-study-article">
+        <button class="cs-back-link" data-navigate="front-page">← Back to Front Page</button>
+
+        <div class="cs-cover">
+          <div class="cs-cover-meta">
+            <span class="category-badge">LUXURY APPAREL & E-COMMERCE</span>
+            <span class="cs-issue-label">PROJECT 03 / 03 · FEATURE STORY</span>
+          </div>
+          <h2 class="cs-cover-title">Classy Fashion</h2>
+          <p class="cs-cover-deck">A modern apparel e-commerce experience optimized for seamless product discovery, apparel filtering, and high-converting fashion shopping.</p>
+          <div class="cs-cover-visual">
+            <img src="assets/images/classy-fashion-thumbnail.jpg" alt="Classy Fashion UI" loading="lazy" />
+          </div>
+          <div class="cs-metadata-grid">
+            <div class="cs-meta-item"><span class="cs-meta-label">Role</span><span class="cs-meta-value">UI/UX Designer</span></div>
+            <div class="cs-meta-item"><span class="cs-meta-label">Timeline</span><span class="cs-meta-value">2026</span></div>
+            <div class="cs-meta-item"><span class="cs-meta-label">Tools</span><span class="cs-meta-value">Figma</span></div>
+            <div class="cs-meta-item"><span class="cs-meta-label">Platform</span><span class="cs-meta-value">Mobile (iOS/Android)</span></div>
+          </div>
+        </div>
+
+        <div class="cs-section">
+          <div class="cs-section-header"><h3 class="cs-section-title">The Story</h3><span class="cs-section-page">P.02</span></div>
+          <div class="cs-two-column">
+            <p>Classy Fashion is a mobile-first luxury apparel storefront designed to bring the editorial quality of fashion magazines into a functional e-commerce experience. The interface combines high-fashion photography with clean product information architecture.</p>
+            <p>The design system uses a neutral beige and black palette that lets the clothing photography take center stage. Typography choices reference editorial fashion publications, creating familiarity for the target audience while maintaining usability.</p>
+          </div>
+        </div>
+
+        <div class="cs-section">
+          <div class="cs-section-header"><h3 class="cs-section-title">The Problem</h3><span class="cs-section-page">P.03</span></div>
+          <div class="cs-pullquote">Fashion e-commerce apps often sacrifice editorial beauty for conversion optimization. Can both coexist?</div>
+          <p class="cs-body-text">The challenge was designing a mobile shopping experience that maintains the aspirational quality of luxury fashion while providing the practical functionality needed for product discovery, size selection, and checkout.</p>
+        </div>
+
+        <div class="cs-section">
+          <div class="cs-section-header"><h3 class="cs-section-title">The Approach</h3><span class="cs-section-page">P.04</span></div>
+          <p class="cs-body-text"><strong>1. Editorial product presentation:</strong> Product cards use generous photography with minimal text overlay, mimicking the layout of fashion lookbooks rather than traditional e-commerce grids.</p>
+          <p class="cs-body-text"><strong>2. Refined filtering:</strong> The product filtering system uses horizontal category chips rather than dropdown menus, keeping the browsing experience fluid and visual.</p>
+          <p class="cs-body-text"><strong>3. Material & detail focus:</strong> Product detail pages prioritize material information and styling context, reflecting how luxury shoppers evaluate clothing.</p>
+        </div>
+
+        <div class="cs-section">
+          <div class="cs-section-header"><h3 class="cs-section-title">User Flow</h3><span class="cs-section-page">P.05</span></div>
+          <div class="cs-flow-diagram">
+            <div class="cs-flow-step"><div class="cs-flow-step-number">1</div><span class="cs-flow-step-label">Browse</span></div>
+            <span class="cs-flow-arrow">→</span>
+            <div class="cs-flow-step"><div class="cs-flow-step-number">2</div><span class="cs-flow-step-label">Filter</span></div>
+            <span class="cs-flow-arrow">→</span>
+            <div class="cs-flow-step"><div class="cs-flow-step-number">3</div><span class="cs-flow-step-label">Product Detail</span></div>
+            <span class="cs-flow-arrow">→</span>
+            <div class="cs-flow-step"><div class="cs-flow-step-number">4</div><span class="cs-flow-step-label">Size Select</span></div>
+            <span class="cs-flow-arrow">→</span>
+            <div class="cs-flow-step"><div class="cs-flow-step-number">5</div><span class="cs-flow-step-label">Checkout</span></div>
+          </div>
+        </div>
+
+        <div class="cs-section">
+          <div class="cs-section-header"><h3 class="cs-section-title">Final Design</h3><span class="cs-section-page">P.08</span></div>
+          <div class="cs-figure">
+            <img src="assets/images/classy-fashion-thumbnail.jpg" alt="Classy Fashion Final Design" loading="lazy" />
+            <p class="cs-figure-caption">Fig. 1 — The Classy Fashion app featuring editorial product cards, curated collection browsing, and material-focused product detail screens.</p>
+          </div>
+          <div class="cs-prototype-embed">
+            <div class="cs-prototype-header">
+              <span class="cs-prototype-title">❖ Live Figma Prototype</span>
+              <a href="https://www.figma.com/proto/zkop4UZCnftJHYydb8F4qU/Classy-Fashion?node-id=1-3321" target="_blank" rel="noopener noreferrer" class="cs-prototype-link">Open in Figma ↗</a>
+            </div>
+            <iframe class="cs-prototype-iframe" src="https://embed.figma.com/proto/zkop4UZCnftJHYydb8F4qU/Classy-Fashion?node-id=1-3321&embed-host=share" allowfullscreen loading="lazy"></iframe>
+          </div>
+        </div>
+
+        <div class="cs-section">
+          <div class="cs-section-header"><h3 class="cs-section-title">The Result</h3><span class="cs-section-page">P.10</span></div>
+          <div class="cs-result-grid">
+            <div class="cs-result-card"><h4 class="cs-result-card-title">What Was Designed</h4><p>A complete mobile luxury fashion storefront with editorial browsing, smart product filtering, detailed product pages, and a streamlined checkout experience.</p></div>
+            <div class="cs-result-card"><h4 class="cs-result-card-title">Key Design Decisions</h4><p>Neutral palette to let photography lead, editorial card layouts over grid thumbnails, and horizontal filtering that maintains visual flow.</p></div>
+            <div class="cs-result-card"><h4 class="cs-result-card-title">What I Learned</h4><p>Luxury e-commerce design requires restraint. Every UI element must feel intentional, and negative space is as important as the content it surrounds.</p></div>
+            <div class="cs-result-card"><h4 class="cs-result-card-title">What I Would Improve</h4><p>Develop a wishlist system, explore AR try-on integration, and design a more sophisticated size recommendation flow.</p></div>
+          </div>
+        </div>
+
+        <div class="cs-next-story"><button class="cs-next-story-link" data-navigate="about">Next: Profile Article →</button></div>
+      </div>
+      <footer class="newspaper-footer"><span class="footer-copyright">© 2026 The Abhinav Vats Edition · Page 04</span><button class="footer-page-turn" data-navigate="front-page">← Front Page</button></footer>
+    </article>
+
+
+    <!-- =================================================================
+         PAGE 05: PROFILE ARTICLE (ABOUT)
+         ================================================================= -->
+    <article class="newspaper-page" id="page-about">
+
+      <!-- Profile Hero Row -->
+      <div class="profile-hero-row">
+        <div class="profile-hero-image">
+          <img src="assets/images/about-me-hero.png" alt="Abhinav Vats — Portrait" loading="lazy" />
+        </div>
+        <div class="profile-narrative">
+          <span class="category-badge" style="margin-bottom:4px;">PROFILE ARTICLE</span>
+          <h2 class="profile-main-title">About<br>Abhinav</h2>
+          <p class="profile-lead-text">Based in New Delhi, Abhinav is a UI/UX-focused frontend developer who enjoys turning ideas into clean, intuitive, and functional digital experiences.</p>
+          <span class="profile-continued-tag">► Continued from Front Page</span>
+          <div class="profile-body-columns">
+            <p class="profile-body-text">Currently pursuing a B.Tech in Computer Science and Engineering at SRM Institute of Science and Technology, Abhinav works at the intersection of design and development, combining an eye for visual detail with an understanding of how products are actually built.</p>
+            <p class="profile-body-text">His experience includes working with product, design, and engineering teams to create and ship web experiences using React, Next.js, and modern frontend technologies. He built 50+ reusable, accessible React components during his internship at Looping Loons.</p>
+            <p class="profile-body-text">His approach to UI/UX is simple: understand the problem first, reduce unnecessary complexity, and create interfaces that feel natural to use. He enjoys exploring layouts, typography, interactions, component systems, and the small details that make a product feel polished.</p>
+            <p class="profile-body-text">Outside of design and development, he enjoys exploring new technologies, working on personal projects, and continuously learning how technology can be used to solve real-world problems.</p>
+          </div>
+        </div>
+      </div>
+
+      <hr style="border:none; border-top:1px solid var(--rule-medium); margin:0 0 16px;">
+
+      <!-- Designer Yojana + Skills Framework -->
+      <div class="profile-extras-grid">
+        <div class="designer-card">
+          <img src="assets/images/designer-yojana.png" alt="Har Company Designer Yojana" loading="lazy" />
+        </div>
+        <div class="skills-card">
+          <img src="assets/images/Structure.png" alt="How He Thinks, Builds, and Improves" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- Comics -->
+      <div class="comics-section">
+        <div class="comics-header">
+          <span class="comics-title">Editorial Comic Corner</span>
+          <span class="page-number">SPECIAL SECTION</span>
+        </div>
+        <img src="assets/images/comic.png" alt="Aunty-gravity Comic" loading="lazy" />
+      </div>
+
+      <hr style="border:none; border-top:1px solid var(--rule-light); margin:16px 0 0;">
+
+      <!-- CTA Banner -->
+      <div class="cta-banner">
+        <h3 class="cta-banner-title">Get to know more of him! :)</h3>
+        <div class="cta-banner-links">
+          <a href="https://www.linkedin.com/in/abhinav-vats25" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="mailto:abhinavvats.dev@gmail.com">Email</a>
+          <button data-navigate="resume">Resume</button>
+        </div>
+      </div>
+
+      <footer class="newspaper-footer"><span class="footer-copyright">© 2026 The Abhinav Vats Edition · Page 05</span><button class="footer-page-turn" data-navigate="resume">Career Stories →</button></footer>
+    </article>
+
+
+    <!-- =================================================================
+         PAGE 06: CAREER STORIES (RESUME)
+         ================================================================= -->
+    <article class="newspaper-page" id="page-resume">
+      <div class="career-stories">
+        <div class="career-header">
+          <div>
+            <h2 class="career-name">Abhinav Vats</h2>
+            <p class="career-role">UI/UX Designer + Frontend Developer</p>
+          </div>
+          <button class="career-print-btn" onclick="window.print()">Download / Print CV ↓</button>
+        </div>
+
+        <!-- Experience -->
+        <div class="career-section">
+          <h3 class="career-section-title">Professional Experience</h3>
+          <div class="career-entry">
+            <div class="career-entry-header">
+              <span class="career-entry-title">UI/UX Frontend Developer Intern — Looping Loons</span>
+              <span class="career-entry-date">Nov 2025 – Apr 2026</span>
+            </div>
+            <p class="career-entry-tag">Paid Internship · Full-Time</p>
+            <ul class="career-entry-list">
+              <li>Built <strong>50+ reusable, accessible React components</strong> for an AI-driven platform and collaborated with product, design, and QA teams across Agile sprints.</li>
+              <li>Engineered a unified design token architecture connecting Figma variables directly to Tailwind CSS and TypeScript props.</li>
+              <li>Designed and shipped high-conversion checkout and onboarding user flows in Figma.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="career-section">
+          <h3 class="career-section-title">Education</h3>
+          <div class="career-entry">
+            <div class="career-entry-header">
+              <span class="career-entry-title">SRM Institute of Science and Technology</span>
+              <span class="career-entry-date">B.Tech in CSE</span>
+            </div>
+            <p class="career-entry-desc">Computer Science and Engineering. Studying at the intersection of design and development.</p>
+          </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="career-section">
+          <h3 class="career-section-title">Selected Figma Product Projects</h3>
+          <div class="career-entry">
+            <div class="career-entry-header"><span class="career-entry-title">Yoruu — AI Dating & Matchmaking Companion</span><span class="career-entry-date">2026</span></div>
+            <p class="career-entry-desc">Designed an intelligent conversation and matching companion with auto-layout components and interactive Figma prototypes.</p>
+          </div>
+          <div class="career-entry">
+            <div class="career-entry-header"><span class="career-entry-title">Planto — B2B Corporate Eco-Solutions</span><span class="career-entry-date">2026</span></div>
+            <p class="career-entry-desc">Constructed a botanical storefront connecting office spaces with plant care setups from local suppliers.</p>
+          </div>
+          <div class="career-entry">
+            <div class="career-entry-header"><span class="career-entry-title">Classy Fashion — Editorial Luxury Apparel</span><span class="career-entry-date">2026</span></div>
+            <p class="career-entry-desc">Crafted an editorial lookbook e-commerce experience blending high-fashion typography with fluid product discovery.</p>
+          </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="career-section">
+          <h3 class="career-section-title">Technical & Design Skills</h3>
+          <div class="career-skills-grid">
+            <div class="career-skill-col"><strong>Design</strong>UI Design, UX Research, Wireframing, Interaction Design, Figma Auto-Layout, Design Systems, Information Architecture.</div>
+            <div class="career-skill-col"><strong>Tools</strong>Figma, FigJam, Framer, Storybook, VS Code, Git, GitHub.</div>
+            <div class="career-skill-col"><strong>Frontend</strong>React, Next.js, TypeScript, JavaScript (ES6+), HTML5, CSS3, Tailwind CSS, Accessibility (WCAG).</div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="newspaper-footer"><span class="footer-copyright">© 2026 The Abhinav Vats Edition · Page 06</span><button class="footer-page-turn" data-navigate="contact">Final Edition →</button></footer>
+    </article>
+
+
+    <!-- =================================================================
+         PAGE 07: FINAL EDITION (CONTACT)
+         ================================================================= -->
+    <article class="newspaper-page" id="page-contact">
+      <div class="contact-section">
+        <hr class="rule-heavy" style="max-width:60px; margin:0 auto 24px;">
+        <h2 class="contact-headline">Write to<br>the Editor.</h2>
+        <p class="contact-subtext">Open for new opportunities, collaborations, and conversations about design and frontend development. Let's build something meaningful.</p>
+
+        <div class="contact-links-row">
+          <a href="mailto:abhinavvats.dev@gmail.com" class="contact-link-item">Email ↗</a>
+          <a href="https://www.linkedin.com/in/abhinav-vats25" target="_blank" rel="noopener noreferrer" class="contact-link-item">LinkedIn ↗</a>
+          <button class="contact-link-item" data-navigate="resume">Resume</button>
+        </div>
+
+        <p style="margin-top:40px; font-family:var(--font-condensed); font-size:10px; color:var(--ink-muted); text-transform:uppercase; letter-spacing:0.1em;">
+          THE ABHINAV VATS EDITION · ISSUE 01 · 2026 · NEW DELHI, INDIA
+        </p>
+        <p style="margin-top:3px; font-family:var(--font-body); font-size:10px; color:var(--ink-light);">
+          abhinavvats.dev@gmail.com · linkedin.com/in/abhinav-vats25
+        </p>
+      </div>
+
+      <footer class="newspaper-footer">
+        <span class="footer-copyright">© 2026 The Abhinav Vats Edition · Typeset in Playfair Display & Oswald · PAGE / END</span>
+        <button class="footer-page-turn" data-navigate="front-page">← Front Page</button>
+      </footer>
+    </article>
+
+  </div><!-- /.newspaper-publication -->
+
+  <!-- Scripts -->
+  <script src="js/lenis-framer.js"></script>
+  <script src="js/loader.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

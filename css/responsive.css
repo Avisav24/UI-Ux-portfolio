@@ -1,0 +1,276 @@
+/* ==========================================================================
+   RESPONSIVE — Tablet & Mobile Broadsheet Adaptations
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   TABLET (max-width: 1024px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .front-page-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .front-page-main {
+    border-right: none;
+    padding-right: 0;
+  }
+
+  .front-page-sidebar {
+    padding-left: 0;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule-light);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+  }
+
+  .lead-story {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .secondary-stories {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .secondary-story {
+    padding-right: 0;
+    border-right: none;
+    border-bottom: 1px solid var(--rule-light);
+    padding-bottom: 20px;
+  }
+
+  .secondary-story:last-child {
+    padding-left: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .travel-essay-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .travel-photos-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .profile-hero-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .profile-body-columns {
+    column-count: 1;
+  }
+
+  .profile-extras-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .cs-two-column {
+    column-count: 1;
+  }
+
+  .cs-metadata-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cs-design-system-grid,
+  .cs-result-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .career-skills-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .cta-banner {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .credibility-dispatch {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   MOBILE (max-width: 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  body {
+    padding: 0;
+  }
+
+  .newspaper-publication {
+    border: none;
+    box-shadow: none;
+  }
+
+  .newspaper-page {
+    padding: 12px;
+  }
+
+  /* Masthead Nav */
+  .masthead-nav {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .masthead-nav-center {
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .masthead-nav-right {
+    display: none;
+  }
+
+  /* Hero */
+  .hero-masthead-name {
+    font-size: clamp(2.8rem, 14vw, 4.5rem);
+  }
+
+  .hero-portrait-cutout {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    height: 120px;
+    margin: 0 auto 8px;
+  }
+
+  .hero-masthead-block {
+    padding: 16px 0 12px;
+  }
+
+  /* Meta bar */
+  .editorial-meta-bar {
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-start;
+  }
+
+  /* Broadsheet grid */
+  .front-page-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .front-page-main {
+    border-right: none;
+    padding-right: 0;
+  }
+
+  .front-page-sidebar {
+    padding-left: 0;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule-light);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  /* Stories */
+  .lead-story {
+    grid-template-columns: 1fr;
+  }
+
+  .secondary-stories {
+    grid-template-columns: 1fr;
+  }
+
+  .secondary-story:last-child {
+    padding-left: 0;
+  }
+
+  /* Travel */
+  .travel-essay-row {
+    grid-template-columns: 1fr;
+  }
+
+  .travel-photos-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+  }
+
+  /* Profile */
+  .profile-hero-row {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-body-columns {
+    column-count: 1;
+  }
+
+  .profile-extras-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Career */
+  .career-header {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .career-entry-header {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .career-skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Case Study */
+  .cs-metadata-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .cs-figure-grid.cols-2,
+  .cs-figure-grid.cols-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-flow-diagram {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .cs-flow-arrow {
+    transform: rotate(90deg);
+  }
+
+  .cs-prototype-iframe {
+    height: 300px;
+  }
+
+  /* Contact */
+  .contact-links-row {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .contact-link-item {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Footer */
+  .newspaper-footer {
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-start;
+  }
+}

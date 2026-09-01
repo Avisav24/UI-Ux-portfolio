@@ -1,0 +1,225 @@
+/* ==========================================================================
+   PAGE-TURN TRANSITIONS & EDITION LOADER
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. EDITION LOADER — 0.3s "Opening a Fresh Newspaper" Sequence
+   -------------------------------------------------------------------------- */
+.edition-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background-color: var(--paper-warm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  opacity: 1;
+  transition: opacity 200ms ease;
+  pointer-events: all;
+}
+
+.edition-loader.hiding {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.edition-loader.hidden {
+  display: none;
+}
+
+.loader-masthead {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 6vw, 4.8rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--ink-black);
+  letter-spacing: -0.01em;
+  line-height: 0.92;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: loaderReveal 200ms 50ms var(--ease-editorial) forwards;
+}
+
+.loader-subtitle {
+  font-family: var(--font-condensed);
+  font-size: clamp(11px, 1.4vw, 14px);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink-muted);
+  opacity: 0;
+  transform: translateY(4px);
+  animation: loaderReveal 200ms 150ms var(--ease-editorial) forwards;
+}
+
+.loader-rule {
+  width: 60px;
+  height: 1px;
+  background-color: var(--ink-black);
+  margin-top: 4px;
+  opacity: 0;
+  transform: scaleX(0);
+  animation: loaderRuleReveal 150ms 100ms var(--ease-editorial) forwards;
+}
+
+@keyframes loaderReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes loaderRuleReveal {
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. 3D PAPER PAGE-TURN ENGINE
+   -------------------------------------------------------------------------- */
+
+/* The publication wrapper provides 3D perspective */
+.page-turn-perspective {
+  perspective: 2000px;
+  perspective-origin: center center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Each newspaper page is a 3D-transformable sheet */
+.newspaper-page {
+  /* Adjust transition duration and cubic-bezier for a smoother, slightly slower turn */
+  transition: transform 900ms cubic-bezier(0.25, 1, 0.5, 1), opacity 900ms ease, box-shadow 900ms ease;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+  transform-origin: left center;
+}
+
+/* --- Entering page (coming into view) --- */
+.newspaper-page.page-enter {
+  display: block !important;
+  animation: pageTurnIn var(--duration-page-turn) var(--ease-page-turn) forwards;
+}
+
+/* --- Exiting page (turning away) --- */
+.newspaper-page.page-exit {
+  display: block !important;
+  animation: pageTurnOut var(--duration-page-turn) var(--ease-page-turn) forwards;
+}
+
+@keyframes pageTurnOut {
+  0% {
+    transform: rotateY(0deg);
+    opacity: 1;
+    filter: brightness(1);
+  }
+  40% {
+    transform: rotateY(-35deg) scale(0.97);
+    opacity: 0.85;
+    filter: brightness(0.92);
+  }
+  100% {
+    transform: rotateY(-90deg) scale(0.94);
+    opacity: 0;
+    filter: brightness(0.8);
+  }
+}
+
+@keyframes pageTurnIn {
+  0% {
+    transform: rotateY(90deg) scale(0.94);
+    opacity: 0;
+    filter: brightness(0.8);
+  }
+  60% {
+    transform: rotateY(20deg) scale(0.98);
+    opacity: 0.9;
+    filter: brightness(0.95);
+  }
+  100% {
+    transform: rotateY(0deg) scale(1);
+    opacity: 1;
+    filter: brightness(1);
+  }
+}
+
+/* Paper fold shadow overlay */
+.newspaper-page.page-exit::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.08) 0%,
+    transparent 100%
+  );
+  pointer-events: none;
+  animation: foldShadow var(--duration-page-turn) var(--ease-page-turn) forwards;
+}
+
+@keyframes foldShadow {
+  0% {
+    opacity: 0;
+    width: 0%;
+  }
+  50% {
+    opacity: 1;
+    width: 40%;
+  }
+  100% {
+    opacity: 0;
+    width: 0%;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. REDUCED MOTION FALLBACK
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .edition-loader {
+    transition: none;
+  }
+
+  .loader-masthead,
+  .loader-subtitle {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .loader-rule {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .newspaper-page.page-enter {
+    animation: simpleFadeIn 200ms ease forwards;
+  }
+
+  .newspaper-page.page-exit {
+    animation: simpleFadeOut 200ms ease forwards;
+  }
+
+  .newspaper-page.page-exit::after {
+    display: none;
+  }
+
+  @keyframes simpleFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes simpleFadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+}

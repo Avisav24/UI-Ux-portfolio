@@ -1,0 +1,297 @@
+/* ==========================================================================
+   THE ABHINAV VATS EDITION — Design Token Foundation
+   A digital newspaper publication portfolio
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   GOOGLE FONTS: Playfair Display (Display Serif), Oswald (Condensed Sans), Inter (Body)
+   -------------------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+
+/* --------------------------------------------------------------------------
+   CSS CUSTOM PROPERTIES — Color System
+   -------------------------------------------------------------------------- */
+:root {
+  /* Paper Backgrounds */
+  --paper-white: #FFFFFF;
+  --paper-warm: #FAF9F6;
+  --paper-muted: #F3F2EE;
+  --paper-aged: #F0EDE6;
+
+  /* Ink Palette */
+  --ink-black: #000000;
+  --ink-charcoal: #1A1A1A;
+  --ink-dark: #2A2A2A;
+  --ink-body: #333333;
+  --ink-secondary: #555555;
+  --ink-muted: #888888;
+  --ink-light: #AAAAAA;
+
+  /* Rules & Dividers */
+  --rule-heavy: #000000;
+  --rule-medium: #333333;
+  --rule-light: #D1D1D1;
+  --rule-hairline: rgba(0, 0, 0, 0.12);
+  --rule-dotted: #999999;
+
+  /* Primary Accent — Editorial Red (used sparingly) */
+  --accent-red: #D92318;
+
+  /* Rare Secondary Accents */
+  --accent-cream: #FBF1AD;
+  --accent-green: #267E38;
+  --accent-blue: #4285F4;
+
+  /* Typography Scale */
+  --font-serif: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+  --font-condensed: 'Oswald', 'Arial Narrow', sans-serif;
+  --font-body: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+
+  /* Spacing & Grid */
+  --grid-max: 1200px;
+  --grid-gutter: 24px;
+  --page-margin: clamp(16px, 4vw, 60px);
+
+  /* Transitions */
+  --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-page-turn: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-micro: 150ms;
+  --duration-hover: 250ms;
+  --duration-page-turn: 750ms;
+}
+
+/* --------------------------------------------------------------------------
+   RESET & BASE STYLES
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--ink-charcoal);
+  background-color: #E8E6E1;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+::selection {
+  background-color: var(--ink-black);
+  color: var(--paper-white);
+}
+
+/* --------------------------------------------------------------------------
+   TYPOGRAPHY UTILITY CLASSES
+   -------------------------------------------------------------------------- */
+
+/* Bodoni Moda — Display Serif */
+.masthead-serif {
+  font-family: var(--font-serif);
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  line-height: 0.92;
+  text-transform: uppercase;
+}
+
+.headline-serif {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  line-height: 1.08;
+}
+
+.pullquote-serif {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.3;
+}
+
+/* Oswald — Condensed Sans */
+.condensed-label {
+  font-family: var(--font-condensed);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.condensed-nav {
+  font-family: var(--font-condensed);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Inter — Body & Functional UI */
+.body-text {
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.caption-text {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--ink-muted);
+}
+
+/* --------------------------------------------------------------------------
+   EDITORIAL ELEMENTS
+   -------------------------------------------------------------------------- */
+
+/* Category Badge — Red Pill */
+.category-badge {
+  display: inline-block;
+  font-family: var(--font-condensed);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--paper-white);
+  background-color: var(--accent-red);
+  padding: 3px 8px 2px;
+  line-height: 1;
+}
+
+/* Page Number */
+.page-number {
+  font-family: var(--font-condensed);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-muted);
+  letter-spacing: 0.04em;
+}
+
+/* Horizontal Rules */
+.rule-heavy {
+  border: none;
+  border-top: 3px solid var(--rule-heavy);
+}
+
+.rule-medium {
+  border: none;
+  border-top: 1.5px solid var(--rule-medium);
+}
+
+.rule-light {
+  border: none;
+  border-top: 1px solid var(--rule-light);
+}
+
+.rule-hairline {
+  border: none;
+  border-top: 1px solid var(--rule-hairline);
+}
+
+.rule-dotted {
+  border: none;
+  border-top: 1px dotted var(--rule-dotted);
+}
+
+/* --------------------------------------------------------------------------
+   NEWSPAPER CONTAINER — The Publication Sheet
+   -------------------------------------------------------------------------- */
+.newspaper-publication {
+  max-width: var(--grid-max);
+  margin: 0 auto;
+  background-color: var(--paper-white);
+  position: relative;
+}
+
+/* Hide all pages by default; show only the active one */
+.newspaper-page {
+  display: none;
+  padding: var(--page-margin);
+  min-height: 100vh;
+}
+
+.newspaper-page.active {
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   LINK INTERACTIONS — Editorial Hover Underline
+   -------------------------------------------------------------------------- */
+.editorial-link {
+  position: relative;
+  display: inline;
+}
+
+.editorial-link::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--ink-black);
+  transition: width var(--duration-hover) var(--ease-editorial);
+}
+
+.editorial-link:hover::after {
+  width: 100%;
+}
+
+/* Arrow Link */
+.arrow-link {
+  font-family: var(--font-condensed);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap var(--duration-hover) var(--ease-editorial);
+}
+
+.arrow-link:hover {
+  gap: 12px;
+}
+
+.arrow-link .arrow {
+  transition: transform var(--duration-hover) var(--ease-editorial);
+}
+
+.arrow-link:hover .arrow {
+  transform: translateX(4px);
+}

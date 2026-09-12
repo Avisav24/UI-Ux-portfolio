@@ -1191,6 +1191,12 @@
   white-space: nowrap;
   display: flex;
   gap: 16px;
+}
+
+.marquee-group {
+  display: flex;
+  gap: 16px;
+  animation: scrollVertical 20s linear infinite;
   will-change: transform;
 }
 
@@ -1201,4 +1207,9 @@
   color: var(--ink-black);
   text-transform: uppercase;
   line-height: 0.8;
+}
+
+@keyframes scrollVertical {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(calc(-100% - 16px)); }
 }

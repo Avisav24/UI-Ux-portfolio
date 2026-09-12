@@ -126,7 +126,8 @@
   font-size: clamp(1.2rem, 2vw, 1.5rem);
   font-style: italic;
   color: var(--ink-muted);
-  max-width: 600px;
+  max-width: 100%;
+  white-space: nowrap;
   margin: 0 auto 24px;
 }
 

@@ -1209,7 +1209,7 @@
 
 .marquee-text {
   font-family: var(--font-serif);
-  font-size: 16px;
+  font-size: 24px;
   font-weight: 700;
   text-transform: uppercase;
   line-height: 1.2;
@@ -1224,7 +1224,7 @@
 }
 
 .marquee-reverse .marquee-text {
-  font-size: 11px;
+  font-size: 16px;
   font-weight: 500;
   opacity: 0.5;
   background: none;

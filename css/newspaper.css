@@ -1222,31 +1222,17 @@
   font-weight: 700;
   text-transform: uppercase;
   line-height: 1.2;
-  
-  /* Shine effect */
-  background: linear-gradient(to right, var(--ink-black) 40%, #888888 50%, var(--ink-black) 60%);
-  background-size: 300% 100%;
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  animation: shine 12s linear infinite;
+  color: var(--ink-black);
 }
 
 .marquee-reverse .marquee-text {
   font-size: 16px;
   font-weight: 500;
   opacity: 0.5;
-  background: none;
   color: var(--ink-muted);
-  -webkit-background-clip: unset;
-  background-clip: unset;
-  animation: none;
 }
 
-@keyframes shine {
-  0% { background-position: 300% 0; }
-  100% { background-position: -300% 0; }
-}
+
 
 @keyframes scrollHorizontal {
   0% { transform: translateX(0); }

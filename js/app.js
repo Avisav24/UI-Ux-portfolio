@@ -219,4 +219,40 @@
       navbar.classList.remove('is-visible');
     }
   });
+
+  // ---- Editorial Menu Logic ----
+  const menuBtn = document.querySelector('.navbar-menu-btn');
+  const closeBtn = document.querySelector('.menu-close-btn');
+  const navMenu = document.getElementById('editorial-nav-menu');
+  
+  if (menuBtn && navMenu) {
+    menuBtn.addEventListener('click', function() {
+      navMenu.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  }
+  
+  if (closeBtn && navMenu) {
+    closeBtn.addEventListener('click', function() {
+      navMenu.classList.remove('open');
+      document.body.style.overflow = ''; 
+    });
+  }
+
+  const menuLinks = document.querySelectorAll('.menu-link');
+  menuLinks.forEach(function(link) {
+    link.addEventListener('click', function() {
+      navMenu.classList.remove('open');
+      document.body.style.overflow = '';
+      
+      const targetPage = link.getAttribute('data-navigate');
+      if (targetPage) {
+        if (targetPage !== currentPage) {
+          window.navigateTo(targetPage);
+        } else if (targetPage === 'front-page') {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }
+    });
+  });
 })();

@@ -1327,3 +1327,132 @@
     font-size: 20px;
   }
 }
+
+/* ==========================================================================
+   FULL-SCREEN EDITORIAL MENU
+   ========================================================================== */
+.editorial-nav-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--paper-white);
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(-100%);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow-y: auto;
+}
+
+.editorial-nav-menu.open {
+  transform: translateX(0);
+}
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 40px;
+  border-bottom: 1px solid var(--rule-light);
+}
+
+.menu-header .navbar-masthead {
+  color: var(--ink-black) !important;
+}
+
+.menu-close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--ink-black);
+  padding: 0;
+}
+
+.menu-content {
+  flex: 1;
+  padding: 60px 40px;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: var(--grid-max);
+  margin: 0 auto;
+}
+
+.menu-section-title {
+  font-family: var(--font-condensed);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--accent-red);
+  margin-bottom: 32px;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid var(--rule-heavy);
+  padding-bottom: 8px;
+}
+
+.menu-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.menu-link {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font-family: var(--font-serif);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--ink-black);
+  text-align: left;
+  line-height: 1.1;
+  transition: color 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.menu-link:hover {
+  color: var(--accent-red);
+}
+
+.menu-link-sub {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--ink-secondary);
+  text-transform: none;
+}
+
+.menu-footer {
+  padding: 24px 40px;
+  border-top: 1px solid var(--rule-light);
+  font-family: var(--font-condensed);
+  font-size: 12px;
+  color: var(--ink-muted);
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .menu-header, .menu-content, .menu-footer {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .menu-link {
+    font-size: 28px;
+  }
+}

@@ -14,29 +14,29 @@
    -------------------------------------------------------------------------- */
 :root {
   /* Paper Backgrounds */
-  --paper-white: #FFFFFF;
-  --paper-warm: #FAF9F6;
-  --paper-muted: #F3F2EE;
-  --paper-aged: #F0EDE6;
+  --paper-white: #F8F7F2;
+  --paper-warm: #F4F3EE;
+  --paper-muted: #EBEBEB;
+  --paper-aged: #E5E5E5;
 
   /* Ink Palette */
-  --ink-black: #000000;
-  --ink-charcoal: #1A1A1A;
+  --ink-black: #111111;
+  --ink-charcoal: #111111;
   --ink-dark: #2A2A2A;
   --ink-body: #333333;
-  --ink-secondary: #555555;
-  --ink-muted: #888888;
-  --ink-light: #AAAAAA;
+  --ink-secondary: #6B6B6B;
+  --ink-muted: #6B6B6B;
+  --ink-light: #999999;
 
   /* Rules & Dividers */
-  --rule-heavy: #000000;
+  --rule-heavy: #111111;
   --rule-medium: #333333;
-  --rule-light: #D1D1D1;
-  --rule-hairline: rgba(0, 0, 0, 0.12);
-  --rule-dotted: #999999;
+  --rule-light: #D9D9D9;
+  --rule-hairline: rgba(17, 17, 17, 0.12);
+  --rule-dotted: #D9D9D9;
 
-  /* Primary Accent — Editorial Red (used sparingly) */
-  --accent-red: #D92318;
+  /* Primary Accent — Editorial Red */
+  --accent-red: #A51C30;
 
   /* Rare Secondary Accents */
   --accent-cream: #FBF1AD;

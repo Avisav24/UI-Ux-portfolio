@@ -160,7 +160,6 @@
   background-color: var(--paper-white);
   color: var(--ink-black);
   transform: translateY(-2px);
-  box-shadow: 4px 4px 0px var(--ink-black);
 }
 
 .hero-secondary-btn {
@@ -173,7 +172,6 @@
   background-color: var(--ink-black);
   color: var(--paper-white);
   transform: translateY(-2px);
-  box-shadow: 4px 4px 0px rgba(0,0,0,0.15);
 }
 
 /* Left and Right Cutouts */
@@ -617,7 +615,6 @@
   border: 1px solid var(--rule-light);
   padding: 8px;
   transform: rotate(-1.5deg);
-  box-shadow: 1px 2px 6px rgba(0,0,0,0.08);
 }
 
 .map-clipping img {
@@ -850,7 +847,7 @@
 }
 
 .profile-extras-grid .designer-card img {
-  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+
 }
 
 .profile-extras-grid .skills-card img {

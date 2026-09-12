@@ -1238,3 +1238,106 @@
   0% { transform: translateX(0); }
   100% { transform: translateX(calc(-100% - 16px)); }
 }
+
+/* ==========================================================================
+   STICKY NAVBAR
+   ========================================================================== */
+.newspaper-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--paper-white);
+  border-bottom: 2px solid var(--rule-heavy);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 40px;
+  transform: translateY(-100%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.newspaper-navbar.is-visible {
+  transform: translateY(0);
+}
+
+.navbar-left, .navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex: 1;
+}
+
+.navbar-right {
+  justify-content: flex-end;
+}
+
+.navbar-center {
+  flex: 1;
+  text-align: center;
+}
+
+.navbar-masthead {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: var(--ink-black);
+}
+
+.navbar-link {
+  font-family: var(--font-condensed);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--ink-black);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.navbar-link:hover {
+  color: var(--accent-red);
+}
+
+.navbar-menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: var(--ink-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-subscribe-btn {
+  background-color: var(--accent-red);
+  color: var(--paper-white);
+  border: none;
+  font-family: var(--font-condensed);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.navbar-subscribe-btn:hover {
+  background-color: var(--ink-black);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .newspaper-navbar {
+    padding: 10px 16px;
+  }
+  .navbar-left .navbar-link, .navbar-right .navbar-link {
+    display: none;
+  }
+  .navbar-masthead {
+    font-size: 20px;
+  }
+}

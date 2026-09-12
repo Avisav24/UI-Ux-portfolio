@@ -206,4 +206,17 @@
 
   // Expose navigate for inline use
   window.navigateTo = navigateTo;
+
+  // ---- Sticky Navbar Logic ----
+  document.addEventListener('scroll', function() {
+    const navbar = document.getElementById('sticky-navbar');
+    if (!navbar) return;
+    
+    // Slide down after 300px of scrolling
+    if (window.scrollY > 300) {
+      navbar.classList.add('is-visible');
+    } else {
+      navbar.classList.remove('is-visible');
+    }
+  });
 })();

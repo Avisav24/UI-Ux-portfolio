@@ -1177,13 +1177,15 @@
   border-bottom: none;
   position: sticky;
   top: 0;
-  height: auto;
+  height: calc(100vh - 350px);
+  min-height: 400px;
   overflow: hidden;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-evenly;
   padding-top: 10px;
   padding-bottom: 10px;
-  margin-top: 20px;
+  margin-top: 40px;
   -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
   mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
 }
@@ -1197,8 +1199,12 @@
 .marquee-group {
   display: flex;
   gap: 16px;
-  animation: scrollHorizontal 30s linear infinite;
+  animation: scrollHorizontal 45s linear infinite;
   will-change: transform;
+}
+
+.marquee-reverse .marquee-group {
+  animation-direction: reverse;
 }
 
 .marquee-text {

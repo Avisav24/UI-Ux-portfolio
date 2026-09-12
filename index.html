@@ -18,6 +18,9 @@
   <script src="https://cdn.jsdelivr.net/npm/motion@11.11.13/dist/motion.js"></script>
 </head>
 <body>
+  
+  <!-- Custom Negative Cursor -->
+  <div class="custom-cursor" id="custom-cursor"></div>
 
   <!-- ===================================================================
        EDITION LOADER — 0.3s "Opening a Fresh Newspaper"
@@ -852,5 +855,20 @@
   <script src="js/loader.js"></script>
   <script src="js/app.js"></script>
 
+  <script>
+    // Custom Negative Cursor
+    const cursor = document.getElementById('custom-cursor');
+    if (cursor) {
+      document.addEventListener('mousemove', (e) => {
+        cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`;
+      });
+      
+      const hoverables = document.querySelectorAll('a, button, input, select, textarea, .hover-overlay');
+      hoverables.forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+      });
+    }
+  </script>
 </body>
 </html>

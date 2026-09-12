@@ -99,8 +99,40 @@ button {
   font-family: inherit;
   border: none;
   background: none;
-  cursor: pointer;
-  color: inherit;
+  cursor: none;
+}
+
+/* Custom Cursor */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  background-color: var(--paper-white);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+  transition: width 0.15s ease, height 0.15s ease;
+  will-change: transform;
+}
+
+body {
+  cursor: none;
+}
+
+a, button, input, select, textarea {
+  cursor: none;
+}
+
+.custom-cursor.hover {
+  width: 64px;
+  height: 64px;
+  background-color: var(--accent-red);
+  mix-blend-mode: normal;
+  opacity: 0.8;
 }
 
 img {

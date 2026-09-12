@@ -90,6 +90,9 @@
               <span class="prototype-link-label">Status</span>
               <span class="prototype-link-url" style="color: var(--ink-black); text-decoration: none;">Live in Production</span>
             </div>
+            <button class="story-cta" data-navigate="looping-loons" style="margin-top:16px;">
+              Read Case Study <span class="cta-arrow">→</span>
+            </button>
           </section>
 
           <!-- Feature Stories Section -->
@@ -211,7 +214,86 @@
 
 
     <!-- =================================================================
-         PAGE 02: YORUU CASE STUDY
+         PAGE 02: LOOPING LOONS CASE STUDY
+         ================================================================= -->
+    <article class="newspaper-page" id="page-looping-loons">
+      <div class="case-study-article">
+        <button class="cs-back-link" data-navigate="front-page">← Back to Front Page</button>
+
+        <div class="cs-cover">
+          <div class="cs-cover-meta">
+            <span class="category-badge">PROFESSIONAL EXPERIENCE</span>
+            <span class="cs-issue-label">CASE STUDY · DESIGN SYSTEMS</span>
+          </div>
+          <h2 class="cs-cover-title">Building a Scalable UI System</h2>
+          <p class="cs-cover-deck">Engineered a comprehensive design system and translated it into 50+ reusable React components to accelerate feature delivery for an AI-driven platform.</p>
+          <div class="cs-cover-visual">
+            <div class="cs-figure" style="height: 400px; display: flex; align-items: center; justify-content: center; background-color: var(--ink-charcoal); color: var(--paper-white); font-family: var(--font-body), sans-serif; text-transform: uppercase; letter-spacing: 0.1em;">
+              [ PLACEHOLDER: COMPONENT LIBRARY OVERVIEW ]
+            </div>
+          </div>
+          <div class="cs-metadata-grid">
+            <div class="cs-meta-item"><span class="cs-meta-label">Role</span><span class="cs-meta-value">UI/UX Frontend Developer</span></div>
+            <div class="cs-meta-item"><span class="cs-meta-label">Timeline</span><span class="cs-meta-value">Nov 2025 – Apr 2026</span></div>
+            <div class="cs-meta-item"><span class="cs-meta-label">Team</span><span class="cs-meta-value">Product, Design, QA</span></div>
+            <div class="cs-meta-item"><span class="cs-meta-label">Outcome</span><span class="cs-meta-value">40% faster delivery</span></div>
+          </div>
+        </div>
+
+        <!-- The Context -->
+        <div class="cs-section">
+          <div class="cs-section-header"><h3 class="cs-section-title">The Context & Problem</h3></div>
+          <div class="cs-pullquote">Before this system, every new feature meant rebuilding the same UI elements. We needed a single source of truth connecting Figma to React.</div>
+          <p class="cs-body-text">Looping Loons is an AI-driven platform. As the product grew, UI inconsistency became a major bottleneck. The engineering team was spending excessive time rebuilding buttons, inputs, and layout grids from scratch for every sprint. Feature delivery was slow, and visual regressions were common.</p>
+          <p class="cs-body-text">The challenge was not just to design a beautiful interface, but to architect a highly structured system of design tokens and components that could be predictably implemented in code.</p>
+        </div>
+
+        <!-- Design Tokens -->
+        <div class="cs-section">
+          <div class="cs-section-header"><h3 class="cs-section-title">Design Tokens (The Foundation)</h3></div>
+          <p class="cs-body-text">Before touching components, I established the foundational design tokens. This ensured that typography scales, spacing increments, and color palettes were mathematically sound and easily consumable by frontend engineers.</p>
+          <div class="cs-figure" style="margin-top: 24px; height: 300px; display: flex; align-items: center; justify-content: center; background-color: #f5f5f5; color: var(--ink-black); font-family: var(--font-body), sans-serif; text-transform: uppercase; border: 1px dashed #ccc;">
+            [ PLACEHOLDER: DESIGN TOKENS SNIPPET (Typography, Spacing, Color) ]
+          </div>
+        </div>
+
+        <!-- Component Architecture -->
+        <div class="cs-section">
+          <div class="cs-section-header"><h3 class="cs-section-title">Component Architecture</h3></div>
+          <p class="cs-body-text">I systematically built over 50 components—ranging from atomic elements like buttons and badges to complex organisms like data tables and navigation structures. Each component was built with Auto-Layout in Figma, accounting for responsive behavior across breakpoints and ensuring strict accessibility contrast standards.</p>
+          <div class="cs-figure" style="margin-top: 24px; height: 300px; display: flex; align-items: center; justify-content: center; background-color: #f5f5f5; color: var(--ink-black); font-family: var(--font-body), sans-serif; text-transform: uppercase; border: 1px dashed #ccc;">
+            [ PLACEHOLDER: FIGMA COMPONENT VARIANTS ]
+          </div>
+        </div>
+
+        <!-- Figma to React Pipeline -->
+        <div class="cs-section">
+          <div class="cs-section-header"><h3 class="cs-section-title">Figma to React Pipeline</h3></div>
+          <p class="cs-body-text">Because I straddle both design and development, my workflow didn't stop at Figma. I translated these design tokens and UI components directly into reusable, typed React components. By implementing code splitting and lazy loading where necessary, the UI library remained highly performant (yielding 95+ Lighthouse scores).</p>
+          <div class="cs-figure" style="margin-top: 24px; height: 300px; display: flex; align-items: center; justify-content: center; background-color: #f5f5f5; color: var(--ink-black); font-family: var(--font-body), sans-serif; text-transform: uppercase; border: 1px dashed #ccc;">
+            [ PLACEHOLDER: REACT COMPONENT CODE / STORYBOOK EXAMPLES ]
+          </div>
+        </div>
+
+        <!-- The Outcome -->
+        <div class="cs-section">
+          <div class="cs-section-header"><h3 class="cs-section-title">The Outcome</h3></div>
+          <div class="cs-two-column">
+            <p><strong>40% Reduction in Feature Delivery Time:</strong> By providing the engineering team with a plug-and-play component library, we eliminated the redundant work of rebuilding UI primitives.</p>
+            <p><strong>Guaranteed UI Consistency:</strong> The gap between design and production was closed. Developers no longer had to guess spacing or hex codes, and product managers saw exactly what was designed translated perfectly into the live build.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <footer class="newspaper-footer">
+        <span class="footer-copyright">© 2026 The Abhinav Vats Edition · Typeset in Playfair Display & Oswald</span>
+        <button class="footer-page-turn" data-navigate="yoruu">Next: Yoruu →</button>
+      </footer>
+    </article>
+
+    <!-- =================================================================
+         PAGE 03: YORUU CASE STUDY
          ================================================================= -->
     <article class="newspaper-page" id="page-yoruu">
       <div class="case-study-article">

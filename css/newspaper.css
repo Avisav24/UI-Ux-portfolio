@@ -1196,7 +1196,7 @@
 .marquee-group {
   display: flex;
   gap: 16px;
-  animation: scrollVertical 20s linear infinite;
+  animation: scrollVertical 60s linear infinite;
   will-change: transform;
 }
 
@@ -1204,9 +1204,21 @@
   font-family: var(--font-serif);
   font-size: clamp(6rem, 10vw, 12rem);
   font-weight: 900;
-  color: var(--ink-black);
   text-transform: uppercase;
   line-height: 0.8;
+  
+  /* Shine effect */
+  background: linear-gradient(to bottom, var(--ink-black) 40%, #888888 50%, var(--ink-black) 60%);
+  background-size: 100% 300%;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shine 12s linear infinite;
+}
+
+@keyframes shine {
+  0% { background-position: 0 300%; }
+  100% { background-position: 0 -300%; }
 }
 
 @keyframes scrollVertical {

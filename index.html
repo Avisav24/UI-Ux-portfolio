@@ -30,14 +30,14 @@
       <button class="navbar-menu-btn" aria-label="Open Menu">
         <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="square"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
       </button>
-      <button class="navbar-link" data-navigate="feature-stories">Work</button>
+      <button class="navbar-link" onclick="window.navigateTo('front-page'); setTimeout(function(){document.getElementById('feature-stories').scrollIntoView({behavior: 'smooth'})}, 100);">Work</button>
     </div>
     <div class="navbar-center" data-navigate="front-page" style="cursor:pointer;">
       <span class="navbar-masthead">THE ABHINAV EDITION</span>
     </div>
     <div class="navbar-right">
       <button class="navbar-link" data-navigate="resume">Resume</button>
-      <button class="navbar-subscribe-btn" onclick="window.location.href='mailto:abhinavvats.dev@gmail.com'">CONTACT</button>
+      <a href="mailto:abhinavvats.dev@gmail.com" class="navbar-subscribe-btn" style="text-decoration:none; display:inline-flex; align-items:center;">CONTACT</a>
     </div>
   </header>
 

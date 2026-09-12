@@ -1180,25 +1180,24 @@
   height: 100vh;
   overflow: hidden;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   padding-top: 0;
   margin-top: 20px;
-  -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
-  mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
 }
 
 .vertical-marquee {
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
   white-space: nowrap;
   display: flex;
-  gap: 16px;
+  gap: 32px;
 }
 
 .marquee-group {
   display: flex;
-  gap: 16px;
-  animation: scrollVertical 60s linear infinite;
+  gap: 32px;
+  animation: scrollHorizontal 60s linear infinite;
   will-change: transform;
 }
 
@@ -1210,8 +1209,8 @@
   line-height: 0.8;
   
   /* Shine effect */
-  background: linear-gradient(to bottom, var(--ink-black) 40%, #888888 50%, var(--ink-black) 60%);
-  background-size: 100% 300%;
+  background: linear-gradient(to right, var(--ink-black) 40%, #888888 50%, var(--ink-black) 60%);
+  background-size: 300% 100%;
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
@@ -1219,11 +1218,11 @@
 }
 
 @keyframes shine {
-  0% { background-position: 0 300%; }
-  100% { background-position: 0 -300%; }
+  0% { background-position: 300% 0; }
+  100% { background-position: -300% 0; }
 }
 
-@keyframes scrollVertical {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(calc(-100% - 16px)); }
+@keyframes scrollHorizontal {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-100% - 32px)); }
 }

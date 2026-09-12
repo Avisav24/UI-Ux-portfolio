@@ -62,24 +62,14 @@
       <!-- Giant Hero Masthead -->
       <section class="hero-masthead-block">
         <h1 class="hero-masthead-name">ABHINAV VATS</h1>
-        
+        <h2 class="hero-positioning">UI/UX DESIGNER + FRONTEND DEVELOPER</h2>
+        <p class="hero-subtext">I design digital products and build the interfaces behind them.</p>
+        <div class="hero-ctas">
+          <button class="hero-primary-btn" onclick="document.getElementById('feature-stories').scrollIntoView({behavior: 'smooth'})">VIEW WORK</button>
+          <button class="hero-secondary-btn" data-navigate="resume">RESUME</button>
+        </div>
       </section>
 
-      <!-- Colored Strip -->
-      <div class="hero-strip">
-        <div class="strip-box strip-green">
-          <p>BUILT 50+ REUSABLE COMPONENTS.<br>ENGINEERED DESIGN TOKENS, AN<br>ABSOLUTE GENIUS <span class="strip-num">3</span></p>
-        </div>
-        <div class="strip-box strip-beige">
-          <p>WORKING WITH ABHINAV WAS ON<br>MY BUCKET-LIST FOR A LONG TIME..<br>GLAD IT WAS POSSIBLE <span class="strip-num">2</span></p>
-        </div>
-        <div class="strip-box strip-photo">
-          <img src="assets/images/visited-chennai-1.jpeg" alt="Chennai" />
-        </div>
-        <div class="strip-box strip-blue">
-          <p>"WE DON't FULLY UNDERSTAND HIS<br>PROCESS. BUT IT WORKS." -<br>LOOPING LOONS TEAM <span class="strip-num">2</span></p>
-        </div>
-      </div>
 
       <!-- ========== BROADSHEET GRID: Main + Sidebar ========== -->
       <div class="front-page-grid">
@@ -87,16 +77,25 @@
         <!-- ===== MAIN COLUMN ===== -->
         <div class="front-page-main">
 
-          <!-- Editorial Lead -->
-          <section class="editorial-lead">
-            <h2 class="editorial-lead-headline">From Wireframes to Production, UI/UX Workflow Delivers Results</h2>
-            <p class="editorial-lead-deck">Designed by Abhinav Vats, the UI/UX frontend experience reduced friction and improved conversions, driving 50+ successful production components in its first quarter.</p>
+          <!-- REAL WORLD EXPERIENCE: Looping Loons -->
+          <section class="editorial-lead" style="margin-bottom: 40px; padding-bottom: 24px; border-bottom: 1px solid var(--rule-light);">
+            <div class="story-meta-row" style="margin-bottom:12px;">
+              <span class="category-badge">PROFESSIONAL EXPERIENCE</span>
+              <span class="story-number">Nov 2025 – Apr 2026</span>
+            </div>
+            <h2 class="editorial-lead-headline" style="font-size: clamp(2rem, 4vw, 2.5rem);">Building a Scalable UI System (50+ Components)</h2>
+            <h3 style="font-family: var(--font-body), sans-serif; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-muted); margin-top: 8px; margin-bottom: 16px;">Looping Loons · UI/UX Frontend Developer</h3>
+            <p class="editorial-lead-deck">Designed and shipped user-facing interfaces for an AI-driven platform. Translated product requirements into a robust design system and developed over 50 reusable React components, improving UI consistency across the platform.</p>
+            <div class="prototype-link-box" style="margin-top:16px;">
+              <span class="prototype-link-label">Status</span>
+              <span class="prototype-link-url" style="color: var(--ink-black); text-decoration: none;">Live in Production</span>
+            </div>
           </section>
 
           <!-- Feature Stories Section -->
           <div class="stories-section-header" id="feature-stories">
-            <h3 class="stories-section-title">Feature Stories</h3>
-            <span class="stories-section-count">3 PROJECTS · LIVE PROTOTYPES · 2026</span>
+            <h3 class="stories-section-title">Selected Case Studies</h3>
+            <span class="stories-section-count">3 PROJECTS · UX & PRODUCT DESIGN</span>
           </div>
 
           <!-- LEAD STORY: Yoruu -->
@@ -166,17 +165,6 @@
         <!-- ===== SIDEBAR COLUMN ===== -->
         <aside class="front-page-sidebar">
 
-          <!-- Travel Photo Essay Sidebar Style -->
-          <div class="travel-essay-sidebar">
-            <h3 class="travel-essay-title">Travels to new places, mostly for the stories and the photos.</h3>
-            <p class="travel-essay-text"><strong>About : </strong>Finds interest in observing people, places, and small details, something that often carries into how he approaches design. <strong>P2</strong></p>
-            <div class="travel-photos-grid-sidebar">
-              <div class="travel-photo-sb"><img src="assets/images/visited-chennai-1.jpeg" alt="Chennai 1" loading="lazy" /></div>
-              <div class="travel-photo-sb"><img src="assets/images/visited-chennai-2.jpeg" alt="Chennai 2" loading="lazy" /></div>
-              <div class="travel-photo-sb"><img src="assets/images/visited-chennai-3.jpeg" alt="Chennai 3" loading="lazy" /></div>
-              <div class="travel-photo-sb"><img src="assets/images/visited-chennai-4.jpeg" alt="Chennai 4" loading="lazy" /></div>
-            </div>
-          </div>
 
           <!-- Map Clipping -->
           <div class="sidebar-module" style="padding-top:16px;">
@@ -209,22 +197,6 @@
             </div>
           </div>
 
-          <!-- Open to Work Promo -->
-          <div class="sidebar-module" style="border-bottom:none; padding-top:16px;">
-            <div class="open-to-work-promo">
-              <div class="otw-box">
-                <h4 class="otw-header">Open to work</h4>
-                <div class="otw-content">
-                  <p>In the latest updates, Abhinav is actively pursuing new opportunities to demonstrate his remarkable skills. Interested parties can download his resume.</p>
-                  <a href="https://drive.google.com/file/d/1Rwf9mkjuOO6LRuNsH7rGSyEPpA0cM3On/view" target="_blank" rel="noopener noreferrer" class="otw-download-btn"><span class="otw-square"></span> Download Resume &gt;&gt;</a>
-                </div>
-              </div>
-              <div class="otw-article">
-                <h4 class="otw-article-title">Abhinav could replace us, Top discussion among AI Tools</h4>
-                <p>AI reportedly concerned about his usage patterns as he regularly uses AI for research, ideation, prototyping and building; focusing on speed, execution and experimentation.</p>
-              </div>
-            </div>
-          </div>
 
         </aside>
       </div>

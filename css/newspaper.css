@@ -84,12 +84,13 @@
    3. GIANT MASTHEAD — The Dominant Visual Element
    -------------------------------------------------------------------------- */
 .hero-masthead-block {
-  padding: 0;
+  padding: 0 0 40px;
   text-align: center;
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   border-bottom: 2px solid var(--rule-heavy);
   background-color: var(--paper-white);
   overflow: visible;
@@ -103,10 +104,71 @@
   color: var(--ink-charcoal);
   letter-spacing: -0.01em;
   line-height: 0.8;
-  padding-bottom: 24px;
+  padding-bottom: 12px;
   margin: 0 auto;
   z-index: 2;
   white-space: nowrap;
+}
+
+.hero-positioning {
+  font-family: var(--font-body), sans-serif;
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--ink-black);
+  letter-spacing: 0.15em;
+  margin-bottom: 12px;
+  margin-top: 12px;
+}
+
+.hero-subtext {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-style: italic;
+  color: var(--ink-muted);
+  max-width: 600px;
+  margin: 0 auto 24px;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.hero-primary-btn,
+.hero-secondary-btn {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 12px 24px;
+  cursor: pointer;
+  border-radius: 0;
+  transition: all 0.2s ease;
+}
+
+.hero-primary-btn {
+  background-color: var(--ink-black);
+  color: var(--paper-white);
+  border: 2px solid var(--ink-black);
+}
+
+.hero-primary-btn:hover {
+  background-color: var(--paper-white);
+  color: var(--ink-black);
+}
+
+.hero-secondary-btn {
+  background-color: transparent;
+  color: var(--ink-black);
+  border: 2px solid var(--ink-black);
+}
+
+.hero-secondary-btn:hover {
+  background-color: var(--ink-black);
+  color: var(--paper-white);
 }
 
 /* Left and Right Cutouts */

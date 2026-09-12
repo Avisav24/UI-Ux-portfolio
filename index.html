@@ -216,6 +216,14 @@
             </div>
           </div>
 
+          <!-- Vertical Scroll Marquee -->
+          <div class="sidebar-module sidebar-marquee-container">
+            <div class="vertical-marquee" id="vertical-marquee">
+              <span class="marquee-text">UI/UX DESIGNER</span>
+              <span class="marquee-text">UI/UX DESIGNER</span>
+              <span class="marquee-text">UI/UX DESIGNER</span>
+            </div>
+          </div>
 
         </aside>
       </div>
@@ -836,5 +844,15 @@
   <script src="js/lenis-framer.js"></script>
   <script src="js/loader.js"></script>
   <script src="js/app.js"></script>
+  <script>
+    // Parallax scrolling for vertical marquee
+    window.addEventListener('scroll', () => {
+      const marquee = document.getElementById('vertical-marquee');
+      if (marquee) {
+        const scrolled = window.scrollY;
+        marquee.style.transform = `translateY(${scrolled * 0.15}px)`;
+      }
+    });
+  </script>
 </body>
 </html>

@@ -1175,16 +1175,15 @@
   border-bottom: none;
   position: sticky;
   top: 0;
-  height: calc(100vh - 120px);
+  height: 100vh;
   min-height: 400px;
   overflow: hidden;
   display: flex;
-  justify-content: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin-top: 40px;
-  -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
-  mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+  justify-content: flex-start;
+  padding-left: 24px;
+  padding-top: 100px;
+  padding-bottom: 0;
+  margin-top: 0;
 }
 
 .vertical-scroll-group {

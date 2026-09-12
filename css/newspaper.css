@@ -1204,8 +1204,16 @@
 }
 
 .marquee-reverse .marquee-group {
-  animation: scrollHorizontal 120s linear infinite reverse;
+  animation-direction: reverse;
 }
+
+/* Staggered row speeds */
+.vertical-marquee:nth-child(1) .marquee-group { animation-duration: 80s; }
+.vertical-marquee:nth-child(2) .marquee-group { animation-duration: 130s; }
+.vertical-marquee:nth-child(3) .marquee-group { animation-duration: 95s; }
+.vertical-marquee:nth-child(4) .marquee-group { animation-duration: 110s; }
+.vertical-marquee:nth-child(5) .marquee-group { animation-duration: 88s; }
+.vertical-marquee:nth-child(6) .marquee-group { animation-duration: 140s; }
 
 .marquee-text {
   font-family: var(--font-serif);

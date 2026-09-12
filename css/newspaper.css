@@ -260,7 +260,7 @@
 
 .front-page-grid {
   display: grid;
-  grid-template-columns: 1fr 340px;
+  grid-template-columns: 1fr 480px;
   gap: 0;
   border-bottom: 1px solid var(--rule-light);
 }

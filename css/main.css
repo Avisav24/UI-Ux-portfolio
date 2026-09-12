@@ -86,7 +86,7 @@ body {
   font-weight: 400;
   line-height: 1.6;
   color: var(--ink-charcoal);
-  background-color: #E8E6E1;
+  background-color: var(--paper-white);
   overflow-x: hidden;
 }
 

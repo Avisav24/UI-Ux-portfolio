@@ -1179,63 +1179,52 @@
   min-height: 400px;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   padding-top: 10px;
   padding-bottom: 10px;
   margin-top: 40px;
-  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
 }
 
-.vertical-marquee {
-  white-space: nowrap;
+.vertical-scroll-group {
   display: flex;
-  gap: 16px;
-}
-
-.marquee-group {
-  display: flex;
-  gap: 16px;
-  animation: scrollHorizontal 90s linear infinite;
+  flex-direction: column;
+  animation: scrollVertical 50s linear infinite;
   will-change: transform;
 }
 
-.marquee-reverse .marquee-group {
-  animation-direction: reverse;
+.vertical-scroll-block {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: center;
+  padding-bottom: 16px; /* Space between the loop instances */
 }
 
-/* Staggered row speeds */
-.vertical-marquee:nth-child(1) .marquee-group { animation-duration: 80s; }
-.vertical-marquee:nth-child(2) .marquee-group { animation-duration: 130s; }
-.vertical-marquee:nth-child(3) .marquee-group { animation-duration: 95s; }
-.vertical-marquee:nth-child(4) .marquee-group { animation-duration: 110s; }
-.vertical-marquee:nth-child(5) .marquee-group { animation-duration: 88s; }
-.vertical-marquee:nth-child(6) .marquee-group { animation-duration: 140s; }
-
-.marquee-text {
+.scroll-line {
   font-family: var(--font-serif);
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 700;
   text-transform: uppercase;
   line-height: 1.2;
   color: var(--ink-black);
+  white-space: nowrap;
 }
 
-.marquee-reverse .marquee-text {
+.scroll-line-sub {
+  font-family: var(--font-serif);
   font-size: 16px;
   font-weight: 500;
-  opacity: 0.5;
+  text-transform: uppercase;
   color: var(--ink-muted);
+  white-space: nowrap;
 }
 
-
-
-@keyframes scrollHorizontal {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(calc(-100% - 16px)); }
+@keyframes scrollVertical {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
 }
-
 /* ==========================================================================
    STICKY NAVBAR
    ========================================================================== */

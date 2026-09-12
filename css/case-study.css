@@ -444,9 +444,10 @@
   align-items: center;
   gap: 6px;
   cursor: pointer;
-  transition: color var(--duration-hover) ease;
+  transition: color var(--duration-hover) ease, gap var(--duration-hover) ease;
 }
 
 .cs-back-link:hover {
   color: var(--ink-black);
+  gap: 10px;
 }

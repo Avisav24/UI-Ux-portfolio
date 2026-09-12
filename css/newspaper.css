@@ -158,6 +158,8 @@
 .hero-primary-btn:hover {
   background-color: var(--paper-white);
   color: var(--ink-black);
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0px var(--ink-black);
 }
 
 .hero-secondary-btn {
@@ -169,6 +171,8 @@
 .hero-secondary-btn:hover {
   background-color: var(--ink-black);
   color: var(--paper-white);
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0px rgba(0,0,0,0.15);
 }
 
 /* Left and Right Cutouts */
@@ -499,6 +503,7 @@
 
 .story-cta:hover {
   gap: 12px;
+  color: var(--ink-black);
 }
 
 /* Prototype link */
@@ -1138,7 +1143,7 @@
   align-items: center;
   gap: 4px;
   cursor: pointer;
-  transition: gap var(--duration-hover) var(--ease-editorial);
+  transition: gap var(--duration-hover) ease, color var(--duration-hover) ease;
 }
 
 .footer-page-turn:hover {
